@@ -38,3 +38,13 @@ if uploaded_file is not None:
     # Can be used wherever a "file-like" object is accepted:
     dataframe = pd.read_csv(uploaded_file)
     st.write(dataframe)
+
+from PIL import Image
+image = Image.open('pexel.jpg')
+
+st.image(image, caption='Sunrise by the mountains')
+
+picture = st.camera_input("Take a picture")
+
+if picture:
+    st.image(picture)
